@@ -175,3 +175,23 @@ function clearAll() {
   }
   browser.storage.local.clear();
 }
+
+/* Button for on/off */
+
+var STATE = true;
+
+if (STATE) {
+  /* tell the popup  what current state is */
+
+  var e =  document.getElementById('--on/off');
+  e.innerText = ' ON';
+}else {
+  var e =  document.getElementById('--on/off');
+  e.innerText = ' OFF';
+}
+
+var button = document.getElementById('--submitter-button');
+
+function myFunction (e) {
+  console.log('lollll')
+}

@@ -1,6 +1,12 @@
 (function(){
     var markInstance = new Mark(document.body);
-    console.log(markInstance)
+    
+    initialize();
+    function initialize() {
+        console.log('Initializing')
+        let gettingItem = browser.storage.local.get();
+        gettingItem.then(onGot, onError);
+    }
     /*
     Log the storage area that changed,
     then for each item changed,
@@ -23,6 +29,16 @@
     }
     
     browser.storage.onChanged.addListener(logStorageChange);
+
+    function onGot(item) {
+        
+        console.log(item , 'we got that shit');
+
+    }
+
+    function onError(error) {
+        console.log(`Error: ${error}`);
+    }
 
 
     
